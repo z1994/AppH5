@@ -50,16 +50,16 @@
     border: solid #ffffff;
         }
         input::-webkit-input-placeholder{
-            color:#fff;
+            color:#979797;
         }
         input::-moz-placeholder{   /* Mozilla Firefox 19+ */
-            color:#fff;
+            color:#979797;
         }
         input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
-            color:#fff;
+            color:#979797;
         }
         input:-ms-input-placeholder{  /* Internet Explorer 10-11 */ 
-            color:#fff;
+            color:#979797;
         }
           .sign-header {
     position: relative;
@@ -140,6 +140,7 @@
         margin-right: 16px;
         padding-right: 10px;
         border-right: 1px solid #ccc;
+        color: #979797;
       }
 
       .sign-input {
@@ -223,9 +224,17 @@
     .footer-protocol{
       color: #FF513A;
     }
+
+    .confirm{
+      background: #FF513A !important;
+    }
   
     
     </style>
+
+<link rel="stylesheet" type="text/css" href="https://www.huangwx.cn/css/sweetalert.css">
+<script type="text/javascript" src="https://www.huangwx.cn/js/sweetalert-dev.js"></script>
+
 </head>
 
 <body>
@@ -242,9 +251,9 @@
       <!-- <div class="iconfont">&#xe608;</div> -->
       <img src="./imgs/手机.png" style="width:14px">
       <span class="sign-text">+86</span>
-      <input type="text" class="sign-input" onkeyup="(this.v=function()
-                  {this.value=this.value.replace(/[^0-9-]+/,'');}).call(this)"
-        onblur="this.v();" maxlength="11" placeholder="请输入手机号" onfocus="this.placeholder=''">
+      <input class="sign-input" type="text" onkeyup="(this.v=function(){this.value=this.value.replace(/[^0-9-]+/,'');}).call(this)" onblur="this.v();"
+        maxlength="11" placeholder="请输入手机号" onfocus="this.placeholder=''">
+        
     </div>
 
     <div class="sign-pwd">
@@ -297,7 +306,7 @@
 
       } else {
         if (tel.value.length !== 11) {
-          alert("请输入正确的手机号");
+          swal("请输入正确的手机号");
           return;
         } else {
           this.res = false;
