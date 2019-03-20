@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+
+    body{
+            margin: 0;
+        }
+
+
+        input {
+    outline: none;
+    border: solid #ffffff;
+        }
+        input::-webkit-input-placeholder{
+            color:#fff;
+        }
+        input::-moz-placeholder{   /* Mozilla Firefox 19+ */
+            color:#fff;
+        }
+        input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+            color:#fff;
+        }
+        input:-ms-input-placeholder{  /* Internet Explorer 10-11 */ 
+            color:#fff;
+        }
+          .sign-header {
+    position: relative;
+    display: flex;
+          }
+
+    .header-back {
+      float: left;
+      margin: 32px 0 14px 20px;
+    }
+
+    .header-text {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -12px;
+      margin-top: -2.5px;
+      font-size: 17px;
+    }
+  
+
+.header{
+  position: relative;
+}
+  .header-bg {
+    /* position: relative;
+    width: 100vw;
+    height: 201px;
+    background: url(./imgs/bj.png) no-repeat;
+    background-size: cover; */
+    /*background-attachment: fixed; */
+    position: absolute;
+    border-radius: 0 0 8px 8px;
+    width: 100vw;
+    height:201px;
+
+  }
+    .bg-text{
+      position: absolute;
+      margin: 68px 0 0 30px;
+      font-size: 22px;
+      color: #fff;
+    }
+      p{
+        margin-top: 5px;
+      }
+
+  .sign-module {
+    position: absolute;
+    /* display: flex;
+    justify-content: space-between; */
+    height: 156px;
+    width: 88vw;
+    border-radius: 10px;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 165px auto 0 auto;
+    border: solid 1px #ccc;
+    box-shadow: 2px 2px 2px #ccc;
+    background: #fff;
+  }
+
+    .sign-tel {
+      display: flex;
+      align-items: center;
+      margin: 39px 15px 0 15px;
+      height: 32px;
+      border-bottom: solid 1px #ccc;
+    }
+
+      .iconfont {
+        display: inline-block;
+        margin-right: 4px;
+      }
+
+      .sign-text {
+        margin-right: 16px;
+        padding-right: 10px;
+        border-right: 1px solid #ccc;
+      }
+
+      .sign-input {
+        width: 30vw;  
+        font-size: 15px;
+      }
+    
+
+    .sign-pwd {
+      margin: 0 15px;
+      line-height: 45px;
+      border-bottom: solid 1px #ccc;
+    }
+
+      .sign-input {
+        font-size: 15px;
+      }
+
+      .send {
+        float: right;
+        margin-top: 5px;
+        width: 30vw;
+        line-height: 30px;
+        text-align: center;
+        background: #FF513A;
+        font-size: 13px;
+        border-radius: 8px;
+        color: #fff;
+      }
+
+
+  .member {
+    text-align: center;
+    margin-top: 90px;
+  }
+
+    .member-content {
+      display: inline-block;
+      width: 88vw;
+      line-height: 40px;
+      border-radius: 4px;
+      font-size: 17px;
+      font-weight: 500;
+      color: #979797;
+      background: #F7F7F7;
+    }
+    .member-hint{
+      font-size: 15px;
+      color: #FF513A;
+    }
+  
+
+  /* .app{
+    text-align: center;
+  }
+    .app-content{
+      display: inline-block;
+      margin-top: 80px;
+      width: 94px;
+      line-height: 30px;
+      border-radius: 4px;
+      font-size: 15px;
+      color: #fff;
+      background: #FF513A;
+    }
+   */
+
+  footer{ 
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    font-size: 11px;
+  }
+
+    .footer-text{
+      color: #979797;
+    }
+    .footer-protocol{
+      color: #FF513A;
+    }
+  
+    
+    </style>
+</head>
+
+<body>
+  <div class="header">
+    <img class="header-bg" src="./imgs/bj.png" alt="">
+    <div class="bg-text">
+      <span>您好，</span>
+      <p>欢迎来到叶檀财经</p>
+    </div>
+  </div>
+
+  <div class="sign-module">
+    <div class="sign-tel">
+      <!-- <div class="iconfont">&#xe608;</div> -->
+      <img src="./imgs/手机.png" style="width:14px">
+      <span class="sign-text">+86</span>
+      <input type="text" class="sign-input" onkeyup="(this.v=function()
+                  {this.value=this.value.replace(/[^0-9-]+/,'');}).call(this)"
+        onblur="this.v();" maxlength="11" placeholder="请输入手机号" onfocus="this.placeholder=''">
+    </div>
+
+    <div class="sign-pwd">
+      <!-- <span class="iconfont">&#xe646;</span> -->
+      <img src="./imgs/验证.png" style="width:14px">
+      <input type="text" class="sign-input" onkeyup="(this.v=function()
+                  {this.value=this.value.replace(/[^0-9-]+/,'');}).call(this)"
+        onblur="this.v();" maxlength="6" placeholder="请输入验证码" onfocus="this.placeholder=''">
+
+      <input class="send" onclick="send()" type="button" value="获取验证码">
+
+
+
+    </div>
+
+    <div class="member">
+      <div class="member-content">登录</div>
+      <p class="member-hint">新用户注册免费领取三天招财会员</p>
+    </div>
+
+
+  </div>
+  <footer>
+      <div class="footer-content">
+        <span class="footer-text">注册即代表同意</span>
+        <span class="footer-protocol">隐私政策/用户协议</span>
+
+      </div>
+    </footer>
+
+  <script>
+    var send_yzm = document.getElementsByClassName("send")[0]
+    var tel = document.getElementsByClassName("sign-input")[0];
+    var yzm = document.getElementsByClassName("sign-input")[1];
+    var res = true;
+    //判断是否能获取验证码
+
+    var mem = document.getElementsByClassName("member-content")[0];
+
+
+
+    function send() {
+      console.log(tel.value.length)
+      console.log(res)
+
+      if (res == false) {
+        console.log(res)
+        return
+        //不可以被点击
+
+      } else {
+        if (tel.value.length !== 11) {
+          alert("请输入正确的手机号");
+          return;
+        } else {
+          this.res = false;
+          send_yzm.style.disable = "disbale"
+          setTimeout(function () {
+            send_yzm.style.opacity = "0.6";
+          }, 1000);
+          var time = 60;
+          var set = setInterval(function () {
+            send_yzm.value = ("(" + --time + ")秒后重发")
+          }, 1000);
+          setTimeout(function () {
+            send_yzm.value = "重新获取";
+            clearInterval(set);
+            this.res = true;
+          }, 60000);
+        }
+      }
+
+    }
+
+    function isno() {
+      if (tel.value.length == 11 && yzm.value.length == 6) {
+        mem.style.background = "#FF513A";
+        mem.style.color = "#fff";
+      } else {
+        mem.style.background = "#F7F7F7";
+        mem.style.color = "#979797";
+        return;
+      }
+    }
+
+    setInterval(function () {
+      isno()
+      console.log(000)
+    }, 500);
+  </script>
+
+</body>
+
+</html>

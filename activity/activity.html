@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="top">
+        <div class="top-right">
+        <img class="top-img" src="./imgs/Page 1.png" alt="">
+        <span class="top-text">提升新中产理财决策效率</span>
+        </div>
+        <button class="top-open">打开</button>
+    </div>
+
+    <header>
+        <img class="header-img" src="./imgs/2.png" alt="">
+        <div></div>
+    </header>
+
+    <div class="content">
+        <div class="content-header">活动信息</div>
+        <ul>
+            <li>
+                <div class="left">
+                    <img class="img" src="./imgs/活动名称.png" alt="">
+                    <span class="left-text">名称</span>
+                </div>
+                <div class="right">
+                    <span>旅上市公司游学之旅上</span>
+                </div>
+            </li>
+
+            <li>
+                <div class="left">
+                    <img class="img" src="./imgs/活动时间.png" alt="">
+                    <span class="left-text">时间</span>
+                </div>
+                <div class="right">
+                    <span>2018.10.10 14：00——2018.11.11 12:00 </span>
+                </div>
+            </li>
+
+            <li>
+                <div class="left">
+                    <img class="img" src="./imgs/活动票务.png" alt="">
+                    <span class="left-text">票务</span>
+                </div>
+                <div class="right">
+                    <span>199元/人</span>
+                </div>
+            </li>
+
+            <li>
+                <div class="left">
+                    <img class="img" src="./imgs/活动人数.png" alt="">
+                    <span class="left-text">人数</span>
+                </div>
+                <div class="right">
+                    <span>限30人</span>
+                </div>
+            </li>
+
+            <li class="li-end">
+                <div class="left">
+                    <img class="img" src="./imgs/活动地点.png" alt="">
+                    <span class="left-text">地点</span>
+                </div>
+                <div class="right right-add">
+                    <span>省市区街道门牌号省市区街道门牌号省市区街道门牌号省市区街道门牌号省市区街道门牌号</span>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+
+    <footer>
+        <div class="footer-title">
+            活动详情
+        </div>
+    </footer>
+
+    <button class="footer-button">
+        <div class="apply">立即报名</div>
+        <div class="date">（截止到2019.03.20）</div>
+    </button>
+
+
+</body>
+
+</html>
+<style>
+    body {
+        margin: 0;
+        background: #f7f7f7;
+    }
+
+    .top{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 4vw;
+        height: 60px;
+        border-bottom: solid 1px #ccc;
+        background: #fff;
+        font-size: 15px
+    }
+    .top-right{
+        display: flex;
+        align-items: center;
+        font-weight: 600;   
+    }
+    .top-img{
+        width: 28px;
+    }
+    .top-text{
+        display: inline-block;
+        margin-left: 3vw;
+    }
+
+
+    .top-open{
+        width: 64px;
+        line-height: 28px;
+        text-align: center;
+        background: #FC6545;
+        color: #fff;
+        border-radius: 6px;
+    }
+
+
+
+    header {
+        position: relative;
+        padding-top: 12px;
+        height: 186px;
+        text-align: center;
+        background: #fff;
+    }
+    .header-img{
+        width: 92vw;
+    }
+
+    .content{
+        padding-top: 2rem;
+        background: #fff;
+    }
+
+    .content-header {
+        text-align: center;
+        line-height: 26px;
+        font-size: 17px;
+        font-weight: 600;
+    }
+
+    ul {
+        padding: 0 15px;
+    }
+
+    li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 0;
+        line-height: 17px;
+        list-style: none;        
+        border-bottom: solid 1px #ccc;
+    }
+    .li-end{
+        border: none !important;
+    }
+    .left{
+        display: flex;
+        align-items: center;
+        padding-right: 13px;
+        font-size: 15px;
+    }
+    .img{
+        margin-right: 13px;
+        width: 22px;
+    }
+    .left-text{
+        display: inline-block;
+        width: 30px;
+        font-weight: 600;
+    }
+    .right{
+        overflow: hidden; /*自动隐藏文字*/
+        text-overflow: ellipsis;/*文字隐藏后添加省略号*/
+        white-space: nowrap;/*强制不换行*/
+        font-size: 13px
+    }
+    .right-add{
+        overflow: initial !important;
+        text-overflow: initial !important;
+        white-space: initial !important;
+    }
+    footer{
+        text-align: center;     
+        background: #fff;
+    }
+    .footer-title{
+        font-size: 17px;
+        line-height: 48px;
+        font-weight: 600;
+    }
+    .footer-button{
+        position: fixed;
+        bottom: 14px;
+        left: 4vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 92vw;
+        border-radius: 10px;
+        background: #FC6545;
+        color: #fff;
+    }
+    .apply{
+        font-size: 17px;
+    }
+    .date{
+        font-size: 11px;
+    }
+
+
+</style>

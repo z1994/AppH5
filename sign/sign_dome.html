@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .content{
+        position: relative;
+    }
+    .input{
+        margin: 3px 0;
+        width: 100vw;
+    }
+    .yzm{
+        position: absolute;
+        left: 70vw;
+        top: 5px;
+        font-size: 3px;
+    }
+    </style>
+</head>
+
+<body>
+
+    <div class="content">
+        <input class="input" type="text" placeholder="手机号">
+
+        <input type="button" class="btn" id="code" value="获取验证码" onclick="yzm()">
+    </div>
+
+    <div class="content">
+        <input class="input" type="text" placeholder="验证码">
+    </div>
+
+    <button onclick="login()">
+        登陆
+    </button>
+
+</body>
+
+</html>
+<script>
+    var tel = document.getElementsByClassName("input")[0];
+    var tel_data = tel.value;
+    //手机号
+    var code = document.getElementById("code");
+    var import_yzm = document.getElementsByClassName("input")[1];
+    var yzm_data = import_yzm.value;
+    //验证码
+
+    function yzm() {
+        if (tel.value != null || tel.value != "") {
+            if (tel.value.length == 11) {
+                console.log(tel_data)
+                code.style.disable = "disable";
+                setTimeout(function () {
+                    code.style.opacity = "0.8";
+                }, 1000);
+
+                var time = 6;
+                var set = setInterval(function () {
+                    code.value = ("(" + --time + ")秒后重新获取");
+                }, 1000);
+
+                setTimeout(function () {
+                    code.value = "重新获取";
+                    clearInterval(set)
+                }, 6000)
+
+
+
+                var xml = new XMLHttpRequest();
+                xml.onreadystatechange = function () {
+                    if (xml.readyState == 4 && xml.status == 200) {
+
+                    }
+                }
+            } else {
+                alert("请输入正确的手机号");
+                return
+            }
+        }
+        xml.open("POST", "www.baidu.com")
+        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xml.send(tel_data);
+    }
+
+    function login() {
+        if (import_yzm.value.length !== 4 && tel.value.length == 11) {
+            alert("请输入验证码")
+            return
+        }
+        if (import_yzm.value.length !== 4 && tel.value.length !== 11) {
+            alert("请输入手机号")
+            return
+        }
+        else {
+            var xml = new XMLHttpRequest();
+            xml.onreadystatechange = function () {
+                if (xml.readyState == 4 && xml.status == 200) {
+
+                } else {
+                    alert("请输入正确的验证码");
+                    return
+                }
+            }
+            xml.open("POST", "www.baidu.com")
+            xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xml.send(tel_data,yzm_data);
+        }
+    }
+</script>
